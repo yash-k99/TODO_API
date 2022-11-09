@@ -33,7 +33,7 @@ const updateTask = (req, res, next) => {
     const values = [req.body.item, req.params.id];
     DB.con.query(sql, values, (err,data) =>{
         if(err) return next(err);
-        else if(data.affectedRows === 0) return next(createCustomAPIError(`No Task with id ${req.params.id}`,404));
+        else if(data.affectedRows === 0) return next(createCustomAPIError(`No Task with id ${req.params.id} found`,404));
         else return res.status(200).json(`Task with id ${req.params.id} was updated successfully`);
     });
 };

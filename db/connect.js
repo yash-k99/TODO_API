@@ -18,7 +18,7 @@ const connectDB = () => {
                 const sql = 'CREATE TABLE IF NOT EXISTS tasks (task_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL, item VARCHAR(255) NOT NULL);';
                 con.query(sql, err => {
                     if(err) return reject(err);
-                    else return resolve('Connected to the database...'); 
+                    else return resolve('Connected to the database'); 
                 });
             }
         });
